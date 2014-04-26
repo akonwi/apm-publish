@@ -1,4 +1,5 @@
 {BufferedProcess} = require 'atom'
+OutputView = require './output-view'
 
 module.exports =
   activate: (state) ->
