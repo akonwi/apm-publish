@@ -1,0 +1,17 @@
+{
+  "name": "apm-publish",
+  "main": "./lib/apm-publish",
+  "version": "0.0.0",
+  "description": "Publish apm packackes from atom",
+  "activationEvents": [
+    "apm-publish:major",
+    "apm-publish:minor",
+    "apm-publish:patch"
+  ],
+  "repository": "https://github.com/akonwi/apm-publish",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {}
+}
