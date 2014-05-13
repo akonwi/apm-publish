@@ -19,6 +19,8 @@ module.exports =
         view.addLine data.toString()
       stderr: (data) ->
         view.addLine data.toString()
+      exit: (code) ->
+        view.finish()
 
   deactivate: ->
 
