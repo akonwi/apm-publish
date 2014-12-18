@@ -8,12 +8,14 @@ class OutputView extends ScrollView
 
   initialize: ->
     super
+    @message = ''
     atom.workspaceView.appendToBottom(this)
 
   addLine: (line) ->
-    @find(".output").append(line)
+    @message += line
 
   finish: ->
+    @find(".output").append(@message)
     setTimeout =>
       @detach()
     , 10000

@@ -8,7 +8,7 @@ module.exports =
     atom.workspaceView.command 'apm-publish:patch', => @publish('patch')
 
   publish: (version) ->
-    dir = atom.project.getRepo().getWorkingDirectory()
+    dir = atom.project.getRepo().getWorkingDirectory() or atom.project.getPath()
     view = new OutputView
     new BufferedProcess
       command: 'apm'
