@@ -1,7 +1,7 @@
 {
   "name": "apm-publish",
   "main": "./lib/apm-publish",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Publish apm packackes from atom",
   "activationEvents": [
     "apm-publish:major",
