@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.5
+
+- fix OutputView not displaying
+
 ### 0.2.4
 
 - Fix typo

@@ -24,7 +24,9 @@ module.exports =
     finish: ->
       @find(".output").append(@message)
       @show()
-      setTimeout((=> @destroy()), 7000)
+      setTimeout =>
+        @destroy()
+      , 7000
 
     destroy: ->
       @panel.destroy()
