@@ -23,7 +23,7 @@ module.exports =
 
     finish: ->
       @find(".output").append(@message)
-      @show()
+      panel.show()
       setTimeout =>
         @destroy()
       , 7000
