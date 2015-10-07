@@ -15,7 +15,7 @@ module.exports =
     view = new OutputView
     new BufferedProcess
       command: atom.packages.getApmPath()
-      args: ['publish', version]
+      args: ['publish', '--no-color', version]
       options:
         cwd: dir
       stdout: (data) ->

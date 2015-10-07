@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.1
+
+- Use `--no-color` option
+
 ### 0.2.0
 
 - Update to atom 1.0 api
