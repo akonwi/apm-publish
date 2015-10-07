@@ -6,7 +6,8 @@
   "activationEvents": [
     "apm-publish:major",
     "apm-publish:minor",
-    "apm-publish:patch"
+    "apm-publish:patch",
+    "apm-publish:version"
   ],
   "repository": "https://github.com/akonwi/apm-publish",
   "license": "MIT",
