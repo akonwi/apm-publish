@@ -14,7 +14,7 @@ module.exports =
   publish: (version) ->
     view = new OutputView
     new BufferedProcess
-      command: 'apm'
+      command: atom.packages.getApmPath()
       args: ['publish', version]
       options:
         cwd: dir
