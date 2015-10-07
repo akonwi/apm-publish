@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.4
+
+- Fix typo
+
 ### 0.2.3
 
 - Update context menus

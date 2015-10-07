@@ -25,7 +25,7 @@ module.exports =
       stderr: (data) ->
         view.addLine data.toString()
       exit: (code) ->
-        messge.dismiss()
+        message.dismiss()
         view.finish()
 
   showInput: -> new InputView(@publish)
