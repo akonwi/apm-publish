@@ -1,13 +1,13 @@
 {BufferedProcess} = require 'atom'
 OutputView = require './output-view'
 
-dir = atom.project.getRepo()?.getWorkingDirectory() or atom.project.getPath()
+dir = atom.project.getRepositories()[0]?.getWorkingDirectory() or atom.project.getPath()
 
 module.exports =
   activate: ->
-    atom.workspaceView.command 'apm-publish:major', => @publish('major')
-    atom.workspaceView.command 'apm-publish:minor', => @publish('minor')
-    atom.workspaceView.command 'apm-publish:patch', => @publish('patch')
+    atom.commands.add 'atom-workspace', 'apm-publish:major', => @publish 'major'
+    atom.commands.add 'atom-workspace', 'apm-publish:minor', => @publish 'minor'
+    atom.commands.add 'atom-workspace', 'apm-publish:patch', => @publish 'patch'
 
   publish: (version) ->
     view = new OutputView
