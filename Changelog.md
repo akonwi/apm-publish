@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.3
+
+- Update context menus
+
 ### 0.2.2
 
 - Show a notification when publish begins
