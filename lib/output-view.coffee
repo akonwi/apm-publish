@@ -15,7 +15,7 @@ module.exports =
     initialize: ->
       super
       @subscribe $(window), 'core:cancel', => @destroy()
-      @panel ?= atom.workspace.addBottomPanel(item: this)
+      @panel ?= atom.workspace.addBottomPanel(item: this, visible: false)
 
     addLine: (line) -> @message += line
 
@@ -23,9 +23,8 @@ module.exports =
 
     finish: ->
       @find(".output").append(@message)
-      setTimeout =>
-        @destroy()
-      , 7000
+      @show()
+      setTimeout => @destroy(), 7000
 
     destroy: ->
       @panel.destroy()
