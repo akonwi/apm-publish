@@ -1,4 +1,5 @@
 {BufferedProcess} = require 'atom'
+notifier = require('atom-notify')('Apm Publish')
 OutputView = require './output-view'
 InputView = require './input-view'
 
@@ -12,6 +13,7 @@ module.exports =
     atom.commands.add 'atom-workspace', 'apm-publish:patch', => @publish 'patch'
 
   publish: (version) ->
+    message = notifier.addInfo "Publishing...", dismissable: true
     view = new OutputView
     new BufferedProcess
       command: atom.packages.getApmPath()
@@ -23,6 +25,7 @@ module.exports =
       stderr: (data) ->
         view.addLine data.toString()
       exit: (code) ->
+        messge.dismiss()
         view.finish()
 
   showInput: -> new InputView(@publish)

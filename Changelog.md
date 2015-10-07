@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.2
+
+- Show a notification when publish begins
+
 ### 0.2.1
 
 - Use `--no-color` option
