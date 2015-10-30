@@ -3,7 +3,8 @@ notifier = require('atom-notify')('Apm Publish')
 OutputView = require './output-view'
 InputView = require './input-view'
 
-dir = atom.project.getRepositories()[0]?.getWorkingDirectory() or atom.project.getPath()
+dir = ->
+  atom.project?.getRepositories()[0]?.getWorkingDirectory() or atom.project?.getPaths()[0]
 
 module.exports =
   activate: ->
@@ -13,19 +14,22 @@ module.exports =
     atom.commands.add 'atom-workspace', 'apm-publish:patch', => @publish 'patch'
 
   publish: (version) ->
-    message = notifier.addInfo "Publishing...", dismissable: true
-    view = new OutputView
-    new BufferedProcess
-      command: atom.packages.getApmPath()
-      args: ['publish', '--no-color', version]
-      options:
-        cwd: dir
-      stdout: (data) ->
-        view.addLine data.toString()
-      stderr: (data) ->
-        view.addLine data.toString()
-      exit: (code) ->
-        message.dismiss()
-        view.finish()
+    unless dir()?
+      notifier.addInfo "There's no project to publish"
+    else
+      message = notifier.addInfo "Publishing...", dismissable: true
+      view = new OutputView
+      new BufferedProcess
+        command: atom.packages.getApmPath()
+        args: ['publish', '--no-color', version]
+        options:
+          cwd: dir()
+        stdout: (data) ->
+          view.addLine data.toString()
+        stderr: (data) ->
+          view.addLine data.toString()
+        exit: (code) ->
+          message.dismiss()
+          view.finish()
 
   showInput: -> new InputView(@publish)

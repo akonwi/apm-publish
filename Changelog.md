@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.8
+
+- fix #4
+
 ### 0.2.7
 
 - fix OutputView not displaying
