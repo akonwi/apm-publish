@@ -6,7 +6,7 @@ module.exports = class InputView extends View
     @div =>
       @subview 'versionEditor', new TextEditorView(mini: true, placeholderText: '0.0.1')
 
-  initialize: (@publish) ->
+  initialize: (@directory, @spawn) ->
     @disposables = new CompositeDisposable
     @currentPane = atom.workspace.getActivePane()
     @panel = atom.workspace.addModalPanel(item: this)
@@ -24,4 +24,4 @@ module.exports = class InputView extends View
   finish: ->
     @destroy()
     version = @versionEditor.getModel().getText()
-    @publish version if version.length > 0
+    @spawn version, @directory if version.length > 0
