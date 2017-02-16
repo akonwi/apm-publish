@@ -1,7 +1,10 @@
 ## Changelog
 
+### 0.3.1
+- Fixes [#6](https://github.com/akonwi/apm-publish/issues/6)
+
 ### 0.3.0
-- Allow selection of which repository to publish from if there are multiple projects open in atom 
+- Allow selection of which repository to publish from if there are multiple projects open in atom
 
 - fix #4
 ### 0.2.8
