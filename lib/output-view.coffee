@@ -26,4 +26,3 @@ module.exports =
 
     destroy: ->
       @panel.destroy()
-      @unsubscribe()

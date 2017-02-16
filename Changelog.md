@@ -1,6 +1,6 @@
 ## Changelog
 
-### 0.3.1
+### 0.3.2
 - Fixes [#6](https://github.com/akonwi/apm-publish/issues/6)
 
 ### 0.3.0
