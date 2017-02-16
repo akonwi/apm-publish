@@ -1,10 +1,7 @@
-{Subscriber} = require 'emissary'
 {$, ScrollView} = require 'atom-space-pen-views'
 
 module.exports =
   class OutputView extends ScrollView
-    Subscriber.includeInto(this)
-
     message: ''
     panel: null
 
@@ -14,7 +11,6 @@ module.exports =
 
     initialize: ->
       super
-      @subscribe $(window), 'core:cancel', => @destroy()
       @panel ?= atom.workspace.addBottomPanel(item: this, visible: false)
 
     addLine: (line) -> @message += line

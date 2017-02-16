@@ -1,12 +1,10 @@
-Path = require 'flavored-path'
-
 publisher = require '../lib/apm-publish'
 
 version = 'major'
 repo =
-  getWorkingDirectory: -> Path.get "~/some/repository"
+  getWorkingDirectory: -> "~/some/repository"
 otherRepo =
-  getWorkingDirectory: -> Path.get "~/some/other/repository"
+  getWorkingDirectory: -> "~/some/other/repository"
 
 describe "apm-publish", ->
   beforeEach ->
